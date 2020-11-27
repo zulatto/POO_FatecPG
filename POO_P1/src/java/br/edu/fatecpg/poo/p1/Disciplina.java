@@ -32,36 +32,42 @@ public String getNameAluno(){
 }
 public String setNameAluno(String na){
     this.na = na;
+        return null;
 }
 public long getRa(){
     return ra;
 }
 public long setRa(long ra){
     this.ra = ra;
+        return 0;
 }
 public int getQtdm(){
     return qtdm;
 }
 public int setQtdm(int qtdm){
     this.qtdm = qtdm;
+        return 0;
 }
 public String getName(){
     return name;
 }
 public String setName(String name){
     this.name = name;
+        return null;
 }
 public String getEmenta(){
     return ementa;
 }
 public String setEmenta(String ementa){
     this.ementa = ementa;
+        return null;
 }
 public int getCiclo(){
     return ciclo;
 }
 public int setCiclo(int ciclo){
     this.ciclo = ciclo;
+        return 0;
 }
 public double getNota(){
     if(nota<0)
@@ -74,5 +80,6 @@ public double getNota(){
 }
 public double setNota(double nota){
     this.nota = nota;
+        return 0;
 }
 }
