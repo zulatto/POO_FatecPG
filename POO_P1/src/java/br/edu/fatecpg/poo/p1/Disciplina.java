@@ -5,81 +5,66 @@
  */
 package br.edu.fatecpg.poo.p1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author yvezu
  */
 public class Disciplina {
-    private String na;
-    private long ra;
-    private int qtdm;
-    private String name;
+    
+    private String nome;
     private String ementa;
     private int ciclo;
     private double nota;
     
-public Disciplina(String na, long ra, int qtdm, String name, String ementa, int ciclo, double nota){
-this.na = na;
-this.ra = ra;
-this.qtdm = qtdm;
-this.name = name;
-this.ementa = ementa;
-this.ciclo = ciclo;
-this.nota = nota;
-}
-public String getNameAluno(){
-    return na;
-}
-public String setNameAluno(String na){
-    this.na = na;
-        return null;
-}
-public long getRa(){
-    return ra;
-}
-public long setRa(long ra){
-    this.ra = ra;
-        return 0;
-}
-public int getQtdm(){
-    return qtdm;
-}
-public int setQtdm(int qtdm){
-    this.qtdm = qtdm;
-        return 0;
-}
-public String getName(){
-    return name;
-}
-public String setName(String name){
-    this.name = name;
-        return null;
-}
-public String getEmenta(){
-    return ementa;
-}
-public String setEmenta(String ementa){
-    this.ementa = ementa;
-        return null;
-}
-public int getCiclo(){
-    return ciclo;
-}
-public int setCiclo(int ciclo){
-    this.ciclo = ciclo;
-        return 0;
-}
-public double getNota(){
-    if(nota<0)
-        this.nota = 0;
-    else if(nota>10)
-        this.nota = 10;
-    else
+    public Disciplina(String nome, String ementa, int ciclo) {
+        this.nome = nome;
+        this.ementa = ementa;
+        this.ciclo = ciclo;
+    }
+    
+    public String getNome(){
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public String getEmenta(){
+        return ementa;
+    }
+    public void setEmenta(String ementa) {
+        this.ementa = ementa;
+    }
+    
+    public int getCiclo(){
+        return ciclo;
+    }
+    public void setCiclo(int ciclo) {
+        this.ciclo = ciclo;
+    }
+    
+    public double getNota(){
+        return nota;
+    }
+    public void setNota(double nota) {
         this.nota = nota;
-    return nota;
-}
-public double setNota(double nota){
-    this.nota = nota;
-        return 0;
-}
+    }
+    
+    public static ArrayList getList() {
+        ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
+        
+        disciplinas.add(new Disciplina("Banco de Dados", "..", 4));
+        disciplinas.add(new Disciplina("Engenharia de Software III", "..", 4));
+        disciplinas.add(new Disciplina ("Ingles IV", "..", 4));
+        disciplinas.add(new Disciplina("Programação Orientada a Objetos", "..", 4));
+        disciplinas.add(new Disciplina("Linguagem de Programação IV", "..", 4));
+        disciplinas.add(new Disciplina("Segurança da Informação", "..", 4));
+        disciplinas.add(new Disciplina("Sistemas Operacionais II", "..", 4));
+        disciplinas.add(new Disciplina("Metodologia da Pesquisa Científico-Tecnológica", "..", 4));
+        
+        return disciplinas;
+    };
+    
 }
