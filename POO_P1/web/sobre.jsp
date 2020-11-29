@@ -5,7 +5,6 @@
 --%>
 <%@page import="br.edu.fatecpg.poo.p1.Disciplina" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% Disciplina a = new Disciplina("Yve Jose Zulatto", 1290481912036L, 7, "Matéria", "ementa",4,10 );%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +14,8 @@
     <body>
         <%@include file="WEB-INF/menu.jspf"%>
         <h1>Sobre mim</h1>
-        <h2>Nome:<%=a.getNameAluno()%></h2>
-        <h2>RA:<%=a.getRa()%></h2>
-        <h2>Link do GitHub: <a href="https://github.com/zulatto"</a></h2>
+        <h2>Nome: Yve Jose Zulatto</h2>
+        <h2>RA: 1290481912036</h2>
+        <h2>Link do GitHub: <a href="https://github.com/zulatto"</a>https://github.com/zulatto</h2>
     </body>
 </html>
