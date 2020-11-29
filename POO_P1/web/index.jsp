@@ -6,8 +6,7 @@
 
 <%@page import="br.edu.fatecpg.poo.p1.Disciplina"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<% Disciplina a = new Disciplina("Yve Jose Zulatto", 1290481912036L, 7, "Matéria", "ementa",4,10 );%>
+<%@page import="java.util.ArrayList" %>
 
 <!DOCTYPE html>
 <html>
@@ -17,8 +16,16 @@
     </head>
     <body>
         <%@include file="WEB-INF/menu.jspf" %>
-        <h1>Nome: <%= a.getNameAluno()%></h1>
-        <h1>RA: <%= a.getRa()%> </h1>
-        <h1>Quantidade de disciplinas: <%= a.getQtdm()%></h1>
+        
+         <% ArrayList<Disciplina> disciplinas = Disciplina.getList(); %>
+        
+        <h2>Yve Jose Zulatto</h2>
+        <h3>1290481912036<h3>
+                
+        <h2>Quantidade de Disciplinas: <%= disciplinas.size() %></h2>
+                
+        <% for ( Disciplina disciplina : disciplinas) { %>
+            <h3><%= disciplina.getNome()%></h3>
+        <%}%>
     </body>
 </html>
