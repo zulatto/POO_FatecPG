@@ -20,7 +20,6 @@ public class Listener implements ServletContextListener{
         return DriverManager.getConnection(DB_URL);
     }
     
-    @Override
     public void contextInitialize(ServletContextEvent s){
         Connection conn = null;
         Statement st = null;
@@ -35,7 +34,6 @@ public class Listener implements ServletContextListener{
         }
     }
     
-    @Override
     public void contextDestoyed(ServletContextEvent s){
         
     }
