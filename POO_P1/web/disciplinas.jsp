@@ -15,50 +15,54 @@
     </head>
     <body>
         <%
-            ArrayList<Disciplina> disciplinas = (ArrayList)application.getAttribute("disciplinas");
-            
-            if (disciplinas == null) {
-                disciplinas = Disciplina.getList();
-            }
-            
-            String[] notas = request.getParameterValues("notas");
-            
-            if(notas != null) {
-                for (int i = 0; i < disciplinas.size(); i++ ) {
-                    disciplinas.get(i).setNota(Double.parseDouble(notas[i]));
-                }
+            if(request.getParameter("nome")!=null){
+                String nome = (String)request.getParameter("nome");
+                String ementa = (String)request.getParameter("ementa");
+                int ciclo = Integer.parseInt(request.getParameter("ciclo"));
+                Double nota = Double.parseDouble(request.getParameter("nota"));
                 
-            application.setAttribute("disciplinas", disciplinas);
+                Disciplina.insert(nome,ementa,ciclo,nota);
             }
-            
-            
+           if(request.getParameter("id")!=null){
+                Disciplina.delete(Long.parseLong(request.getParameter("id")));
+            }
         %>
+        
         
         <%@include file="WEB-INF/menu.jspf" %>
         
         <h1>POO P1</h1>
         <h1>Disciplinas</h1>
-         <form>
         <table>
             <tr>
-                <th>Disciplinas</th>
+                <th>Disciplina</th>
                 <th>Ementa</th>
                 <th>Ciclo</th>
                 <th>Nota</th>
                 <th>Alterar</th>
             </tr>
-            <% for ( Disciplina disciplina : disciplinas) { %>
+            <% for ( Disciplina x: Disciplina.getList()) { %>
             <tr>
-                <td><%= disciplina.getNome() %></td>
-                <td><%= disciplina.getEmenta()%></td>
-                <td><%= disciplina.getCiclo()%></td>
-                <td><%= disciplina.getNota()%></td>
-                <td><input type="text" name="notas" value="<%= disciplina.getNota()%>"></td>
+                <td><%= x.getNome() %></td>
+                <td><%= x.getEmenta()%></td>
+                <td><%= x.getCiclo()%></td>
+                <td><%= x.getNota()%></td>
             </tr>
-            
+            <form>
+                <input type="hidden" name="id" value="<%=x.getRowId()%>">
+                <input type="submit" value="Deletar">
+            </form>
+        </td>
+        </tr>
             <%}%>
         </table>
-        <input type="submit" value="Enviar">
+        <h2>Add Disciplinas</h2>
+        <form>
+            <input type="text" name="nome" placeholder="nome">
+            <input type="text" name="ementa" placeholder="ementa">
+            <input type="number" name="ciclo" placeholder="ciclo">
+            <input type="double" name="nota" placeholder="nota">
+            <input type="submit" value="Enviar">
         </form>
     </body>
 </html>
