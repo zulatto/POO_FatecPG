@@ -53,7 +53,7 @@ public class Disciplina {
     }
     
     public static ArrayList getList() {
-        ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
+        ArrayList<Disciplina> disciplinas = new ArrayList<>();
         
         disciplinas.add(new Disciplina("Banco de Dados", "..", 4));
         disciplinas.add(new Disciplina("Engenharia de Software III", "..", 4));
