@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author yvezu
  */
 public class Disciplina {
+
     
     private String nome;
     private String ementa;
